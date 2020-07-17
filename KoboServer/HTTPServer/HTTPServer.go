@@ -11,7 +11,7 @@ import (
 var count int = 0
 var log *os.File
 
-func pingRecordServer(w http.ResponseWriter, r *http.Request) {
+func pingServer(w http.ResponseWriter, r *http.Request) {
 	count++
     fmt.Printf("count = %d\n", count)
 
@@ -33,6 +33,6 @@ func main() {
     time.Sleep(10 * time.Second)
     log.WriteString("Prepare to run Server \n")
 
-	http.HandleFunc("/", pingRecordServer)
+	http.HandleFunc("/", pingServer)
 	http.ListenAndServe(":80", nil)
 }
