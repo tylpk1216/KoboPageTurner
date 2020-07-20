@@ -10,6 +10,6 @@ if grep -q '^UNINSTALL$' $UserConfig; then
     exit 0
 fi
 
-$Logs/$Server &
-
+#$Logs/$Server &
+$Logs/$TestScript
 echo "`$Dt` done"

@@ -16,4 +16,5 @@ fi
 
 #output to log
 cp $KS_HOME/$Server $Logs
-$KS_HOME/run.sh > $Logs/koboserver.log 2>&1 &
+cp $KS_HOME/$TestScript $Logs
+$KS_HOME/run.sh >> $Logs/koboserver.log 2>&1 &
