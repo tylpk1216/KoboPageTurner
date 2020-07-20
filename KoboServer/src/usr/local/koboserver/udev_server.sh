@@ -15,6 +15,6 @@ fi
 [ ! -e "$UserConfig" ] && echo #UNINSTALL > $UserConfig
 
 #output to log
-cp $KS_HOME/$Server $Logs
-cp $KS_HOME/$TestScript $Logs
+[ ! -e "$Logs/$Server" ] && cp $KS_HOME/$Server $Logs
+[ ! -e "$Logs/$TestScript" ] && cp $KS_HOME/$TestScript $Logs
 $KS_HOME/run.sh >> $Logs/koboserver.log 2>&1 &
