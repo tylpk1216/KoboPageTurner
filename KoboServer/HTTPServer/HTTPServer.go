@@ -1,6 +1,7 @@
 package main
 
 import (
+    "context"
 	"fmt"
 	"io"
 	"net/http"
@@ -8,8 +9,6 @@ import (
 	"strconv"
 	"time"
 )
-
-var gLog *os.File
 
 var gLeftEvent = []byte{
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00,  0x03, 0x00, 0x39, 0x00, 0x00, 0x00, 0x00, 0x00,
@@ -22,6 +21,9 @@ var gLeftEvent = []byte{
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00,  0x03, 0x00, 0x34, 0x00, 0x00, 0x00, 0x00, 0x00,
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00,  0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00,
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00,  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x50, 0x51, 0x02, 0x00,  0x01, 0x00, 0x4A, 0x01, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x50, 0x51, 0x02, 0x00,  0x01, 0x00, 0x45, 0x01, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x50, 0x51, 0x02, 0x00,  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 }
 
 var gRightEvent = []byte{
@@ -35,21 +37,25 @@ var gRightEvent = []byte{
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00,  0x03, 0x00, 0x34, 0x00, 0x00, 0x00, 0x00, 0x00,
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00,  0x00, 0x00, 0x02, 0x00, 0x00, 0x00, 0x00, 0x00,
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x02, 0x00,  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x50, 0x51, 0x02, 0x00,  0x01, 0x00, 0x4A, 0x01, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x50, 0x51, 0x02, 0x00,  0x01, 0x00, 0x45, 0x01, 0x00, 0x00, 0x00, 0x00,
+    0x00, 0x00, 0x00, 0x00, 0x50, 0x51, 0x02, 0x00,  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 }
 
 func addTimeStamp(buf []byte) error {
     n := int32(time.Now().Unix())
     s := fmt.Sprintf("%08X(%d)", n, n);
-    gLog.WriteString(s)
+    fmt.Println(s)
 
-    for i := 0; i < 10; i++ {
+    line := 13
+    for i := 0; i < line; i++ {
         for d_i := 0; d_i < 4; d_i++ {
             index := i * 8
 
             s1 := s[8 - 2 * (d_i + 1) : 8 - 2 * d_i]
             n1, err := strconv.ParseUint(s1, 16, 8)
             if err != nil {
-                gLog.WriteString(fmt.Sprintf("Strconv Error (%v) \n", err))
+                fmt.Printf("Strconv Error (%v) \n", err)
                 return fmt.Errorf("Convert Error : %s", s)
             }
 
@@ -61,9 +67,9 @@ func addTimeStamp(buf []byte) error {
 }
 
 func TriggerTouch(buf []byte) error {
-    f, err := os.OpenFile("/dev/input/event1", os.O_WRONLY, 0777)
+    f, err := os.OpenFile("/dev/input/event1", os.O_RDWR, 0777)
     if err != nil {
-        gLog.WriteString(fmt.Sprintf("Open File Error (%v) \n", err))
+        fmt.Printf("Open File Error (%v) \n", err)
         return err
     }
 
@@ -71,12 +77,9 @@ func TriggerTouch(buf []byte) error {
 
     n, err := f.Write(buf)
     if err != nil {
-        gLog.WriteString(fmt.Sprintf("Write File Error (%v) \n", err))
+        fmt.Printf("Write File Error (%v) \n", err)
         return err
     }
-
-    gLog.WriteString(fmt.Sprintf("Wrote %d bytes \n", n))
-    gLog.Sync()
 
     fmt.Printf("Wrote %d bytes \n", n)
 
@@ -102,52 +105,40 @@ func rightPage() error {
 }
 
 func left(w http.ResponseWriter, r *http.Request) {
-    gLog.WriteString("left \n")
-    gLog.Sync()
-
-    err := leftPage()
-    if err != nil {
-        io.WriteString(w, fmt.Sprintf("%v", err))
-        return
-    }
-
-    io.WriteString(w, fmt.Sprintf("%v true(%08X)", err, int32(time.Now().Unix())))
+    fmt.Println("left")
+    sendResponse(w, leftPage())
 }
 
 func right(w http.ResponseWriter, r *http.Request) {
-    gLog.WriteString("right \n")
-    gLog.Sync()
-
-    err := rightPage()
-    if err != nil {
-        io.WriteString(w, fmt.Sprintf("%v", err))
-        return
-    }
-
-    io.WriteString(w, fmt.Sprintf("%v true(%08X)", err, int32(time.Now().Unix())))
+    fmt.Println("right")
+    sendResponse(w, rightPage())
 }
 
-func exit(w http.ResponseWriter, r *http.Request) {
-    gLog.WriteString("exit \n")
-    gLog.WriteString("Clsoe Server \n")
-    gLog.Sync()
-
-    io.WriteString(w, fmt.Sprintf("true(%08X)", int32(time.Now().Unix())))
+func sendResponse(w http.ResponseWriter, err error) {
+    n := int32(time.Now().Unix())
+    io.WriteString(w, fmt.Sprintf("(%08X) (%v)", n, err))
 }
 
 func main() {
-    gLog, err := os.OpenFile("/mnt/onboard/.koboserver/HTTPServer.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
-    if err != nil {
+    fmt.Println("Prepare to run Server")
+
+    m := http.NewServeMux()
+
+    s := http.Server{Addr: ":80", Handler: m}
+
+    m.HandleFunc("/left", left)
+    m.HandleFunc("/right", right)
+
+    m.HandleFunc("/exit", func(w http.ResponseWriter, r *http.Request) {
+        fmt.Println("Clsoe Server")
+        sendResponse(w, nil)
+        time.Sleep(2 * time.Second)
+        s.Shutdown(context.Background())
+    })
+
+    if err := s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
         panic(err)
     }
 
-    //defer gLog.Close()
-
-    gLog.WriteString("Prepare to run Server \n")
-
-    http.HandleFunc("/left", left)
-    http.HandleFunc("/right", right)
-    http.HandleFunc("/exit", exit)
-
-    http.ListenAndServe(":80", nil)
+    fmt.Println("Finished")
 }
