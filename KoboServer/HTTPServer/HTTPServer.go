@@ -60,11 +60,11 @@ func addTimeStamp(buf []byte) error {
     return nil
 }
 
-func TriggerTouch(buf []byte) {
-    f, err := os.OpenFile("/dev/input/event1", os.O_WRONLY | os.O_SYNC, 0777)
+func TriggerTouch(buf []byte) error {
+    f, err := os.OpenFile("/dev/input/event1", os.O_WRONLY, 0777)
     if err != nil {
         gLog.WriteString(fmt.Sprintf("Open File Error (%v) \n", err))
-        return
+        return err
     }
 
     defer f.Close()
@@ -72,58 +72,76 @@ func TriggerTouch(buf []byte) {
     n, err := f.Write(buf)
     if err != nil {
         gLog.WriteString(fmt.Sprintf("Write File Error (%v) \n", err))
-        return
+        return err
     }
 
     gLog.WriteString(fmt.Sprintf("Wrote %d bytes \n", n))
+    gLog.Sync()
+
+    fmt.Printf("Wrote %d bytes \n", n)
+
+    return nil
 }
 
-func TouchPage(buf []byte) {
+func TouchPage(buf []byte) error {
     err := addTimeStamp(buf)
     if err != nil {
         fmt.Println(err)
-        return
+        return err
     }
 
-    TriggerTouch(buf)
+    return TriggerTouch(buf)
 }
 
-func leftPage() {
-    TouchPage(gLeftEvent)
+func leftPage() error {
+    return TouchPage(gLeftEvent)
 }
 
-func rightPage() {
-    TouchPage(gRightEvent)
+func rightPage() error {
+    return TouchPage(gRightEvent)
 }
 
 func left(w http.ResponseWriter, r *http.Request) {
     gLog.WriteString("left \n")
-    io.WriteString(w, "true")
+    gLog.Sync()
 
-    leftPage();
+    err := leftPage()
+    if err != nil {
+        io.WriteString(w, fmt.Sprintf("%v", err))
+        return
+    }
+
+    io.WriteString(w, fmt.Sprintf("%v true(%08X)", err, int32(time.Now().Unix())))
 }
 
 func right(w http.ResponseWriter, r *http.Request) {
     gLog.WriteString("right \n")
-    io.WriteString(w, "true")
+    gLog.Sync()
 
-    rightPage()
+    err := rightPage()
+    if err != nil {
+        io.WriteString(w, fmt.Sprintf("%v", err))
+        return
+    }
+
+    io.WriteString(w, fmt.Sprintf("%v true(%08X)", err, int32(time.Now().Unix())))
 }
 
 func exit(w http.ResponseWriter, r *http.Request) {
     gLog.WriteString("exit \n")
-    io.WriteString(w, "true")
-
     gLog.WriteString("Clsoe Server \n")
+    gLog.Sync()
+
+    io.WriteString(w, fmt.Sprintf("true(%08X)", int32(time.Now().Unix())))
 }
 
 func main() {
-    gLog, err := os.Create("/mnt/onboard/.koboserver/HTTPServer.log")
+    gLog, err := os.OpenFile("/mnt/onboard/.koboserver/HTTPServer.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0777)
     if err != nil {
         panic(err)
     }
 
-    defer gLog.Close()
+    //defer gLog.Close()
 
     gLog.WriteString("Prepare to run Server \n")
 
