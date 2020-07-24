@@ -13,7 +13,7 @@ SET EXE=HTTPServerARM
 
 go build -o %EXE% HTTPServer.go
 
-IF "%ERRORLEVEL%" == "1" (
+IF NOT "%ERRORLEVEL%" == "0" (
     echo.
     echo Something is wrong.
     echo.
