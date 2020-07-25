@@ -1,6 +1,5 @@
 #!/bin/sh
 
-uname -a
-echo ------------
-df -ah
-echo ------------
+echo --------------------
+cat /dev/input/event1
+echo --------------------

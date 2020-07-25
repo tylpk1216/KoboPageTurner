@@ -11,7 +11,7 @@ if grep -q '^UNINSTALL$' $UserConfig; then
 fi
 
 # check instance exist
-running="PID"
+running=$Logs/PID
 if [ -e "$running" ]; then
     echo "Server is running."
     exit 0
