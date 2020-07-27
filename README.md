@@ -14,11 +14,9 @@ I used Kobo Clard HD to test this concept.
 05. Use Android(HTTP Shortcuts) to send HTTP request.
 06. Use three API to control the Web Server.
 
-GET /left -> left page.
-
-GET /right -> right page.
-
-GET /exit -> shutdown the Web Server.
+* GET /left -> left page.
+* GET /right -> right page.
+* GET /exit -> shutdown the Web Server.
 
 ## Acknowledge
 Thanks to KoboCloud. I got this idea from it.
