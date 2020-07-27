@@ -19,5 +19,6 @@ fi
 
 echo "Run" > $running
 $Logs/$Server
+rm $running
 #$Logs/$TestScript
 echo "`$Dt` done"
