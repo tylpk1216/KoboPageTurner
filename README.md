@@ -1,6 +1,10 @@
 ## KoboPageTurner
 When I knew the KoboCloud project, I wanted to follow its concept to run a Web Server on Kobo device(Clara HD). When the Web Sever receives API, it will simulate to turn a page by sending touch event to touch panel.
 
+It can run on different Kobo device in theory. Just make sure two things:
+01. What is the touch panel of your Kobo device?
+02. Do we adjust X or Y to match your panel ?
+
 ## Architecture
 ![Architecture](Doc/KoboPageTurner.png)
 
@@ -17,6 +21,9 @@ I used Kobo Clard HD to test this concept.
 * GET /left -> left page.
 * GET /right -> right page.
 * GET /exit -> shutdown the Web Server.
+
+## Note
+This project is just prototype verification because I found the Wi-Fi of Clara HD is very bad. It often closes the Wi-Fi suddenly. I don't find a solution to solve it. If the Wi-Fi is closed, I must back to Home screen to turn on the Wi-Fi again. Then I can go on to read a book with my KoboPageTurner.
 
 ## Acknowledge
 Thanks to KoboCloud. I got this idea from it.
