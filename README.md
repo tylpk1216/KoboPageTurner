@@ -5,6 +5,9 @@ It can run on different Kobo device in theory. Just make sure two things:
 01. What is the touch panel of your Kobo device?
 02. Do we adjust X or Y to match your panel ?
 
+## Test Video
+Please visit [here](https://youtu.be/ADpR_Omy-PE "KoboPageTurner").
+
 ## Architecture
 ![Architecture](Doc/KoboPageTurner.png)
 
