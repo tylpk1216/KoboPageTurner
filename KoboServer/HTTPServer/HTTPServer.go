@@ -158,8 +158,7 @@ func main() {
 
     m.HandleFunc("/exit", func(w http.ResponseWriter, r *http.Request) {
         fmt.Println("Clsoe Server")
-        sendResponse(w, nil)
-
+        
         err := os.Remove("/mnt/onboard/.koboserver/PID")
         sendResponse(w, err)
 
