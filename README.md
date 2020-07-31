@@ -25,6 +25,7 @@ I used Kobo Clard HD to test this concept.
 * GET /exit -> shutdown the Web Server.
 
 ## My Page Setting
+Actually I do not know the formula of pixelToValue when sending the touch event. I used "cat /dev/input/event1" to catch raw data. This my area setting to turn page.
 ![Page Setting](Doc/Page.jpg)
 
 ## Note
