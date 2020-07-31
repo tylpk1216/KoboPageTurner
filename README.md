@@ -20,13 +20,18 @@ I used Kobo Clard HD to test this concept.
 04. Turn on Wi-Fi on Kobo device. The Web Server will run on port 80.
 05. Use Android(HTTP Shortcuts) to send HTTP request.
 06. Use three API to control the Web Server.
-
 * GET /left -> left page.
 * GET /right -> right page.
 * GET /exit -> shutdown the Web Server.
 
+## My Page Setting
+![Page Setting](Doc/Page.jpg)
+
 ## Note
 This project is just prototype verification because I found the Wi-Fi of Clara HD is very bad. It often closes the Wi-Fi suddenly. I don't find a solution to solve it. If the Wi-Fi is closed, I must back to Home screen to turn on the Wi-Fi again. Then I can go on to read a book with my KoboPageTurner.
+
+Update:
+The Wi-Fi is closed automatically by Kobo system.
 
 ## Acknowledge
 Thanks to KoboCloud. I got this idea from it.
