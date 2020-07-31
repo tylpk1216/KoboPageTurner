@@ -35,6 +35,12 @@ This project is just prototype verification because I found the Wi-Fi of Clara H
 Update:
 The Wi-Fi is closed automatically by Kobo system.
 
+You colud add the setting in your "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf". Maybe it will solve the Wi-Fi problem.
+```
+[DeveloperSettings]
+ForceWifiOn=true
+```
+
 ## Acknowledge
 Thanks to KoboCloud. I got this idea from it.
 
