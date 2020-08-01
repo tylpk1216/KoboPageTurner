@@ -37,6 +37,8 @@ var gEvent = []byte{
     0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x02, 0x00,  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 }
 
+var touchEvent *os.File
+
 func addTimeStamp(buf []byte) error {
     n := int32(time.Now().Unix())
     s := fmt.Sprintf("%08X(%d)", n, n);
@@ -72,15 +74,7 @@ func debugEvent(buf []byte) {
 }
 
 func TriggerTouch(buf []byte) error {
-    f, err := os.OpenFile("/dev/input/event1", os.O_RDWR, 0777)
-    if err != nil {
-        fmt.Printf("Open File Error (%v) \n", err)
-        return err
-    }
-
-    defer f.Close()
-
-    n, err := f.Write(buf)
+    n, err := touchEvent.Write(buf)
     if err != nil {
         fmt.Printf("Write File Error (%v) \n", err)
         return err
@@ -88,7 +82,7 @@ func TriggerTouch(buf []byte) error {
 
     fmt.Printf("Wrote %d bytes \n", n)
 
-    debugEvent(buf)
+    //debugEvent(buf)
 
     return nil
 }
@@ -103,13 +97,23 @@ func TouchPage(buf []byte) error {
     return TriggerTouch(buf)
 }
 
-func setXY(x, y int) {
-    // little endian
-    x1 := x % 256
-    x2 := x / 256
+func pixelToValue(x, y int) (int, int) {
+    // The origin point is right-top.
+    // x = y, y = x
+    return y, x
+}
 
-    y1 := y % 256
-    y2 := y / 256
+func setXY(x, y int) {
+    xValue, yValue := pixelToValue(x, y)
+
+    fmt.Println("After pixelToValue", xValue, yValue)
+
+    // little endian
+    x1 := xValue % 256
+    x2 := xValue / 256
+
+    y1 := yValue % 256
+    y2 := yValue / 256
 
     i := 60
     gEvent[i]   = byte(x1)
@@ -121,12 +125,12 @@ func setXY(x, y int) {
 }
 
 func leftPage() error {
-    setXY(0x0356, 0x033F)
+    setXY(800, 500)
     return TouchPage(gEvent)
 }
 
 func rightPage() error {
-    setXY(0x0479, 0x013F)
+    setXY(100, 500)
     return TouchPage(gEvent)
 }
 
@@ -149,8 +153,15 @@ func sendResponse(w http.ResponseWriter, err error) {
 func main() {
     fmt.Println("Prepare to run Server")
 
-    m := http.NewServeMux()
+    var err error
+    touchEvent, err = os.OpenFile("/dev/input/event1", os.O_RDWR, 0777)
+    if err != nil {
+        panic(fmt.Errorf("Open File Error (%v) \n", err))
+    }
 
+    defer touchEvent.Close()
+
+    m := http.NewServeMux()
     s := http.Server{Addr: ":80", Handler: m}
 
     m.HandleFunc("/left", left)
@@ -158,8 +169,8 @@ func main() {
 
     m.HandleFunc("/exit", func(w http.ResponseWriter, r *http.Request) {
         fmt.Println("Clsoe Server")
-        
-        err := os.Remove("/mnt/onboard/.koboserver/PID")
+
+        err = os.Remove("/mnt/onboard/.koboserver/PID")
         sendResponse(w, err)
 
         waitSecs := 3
@@ -171,7 +182,7 @@ func main() {
         }()
     })
 
-    if err := s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
+    if err = s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
         panic(err)
     }
 
