@@ -27,7 +27,7 @@ I used Kobo Clard HD to test this concept.
 ## My Page Setting
 Actually I do not know the formula of pixelToValue when sending the touch event. I used "cat /dev/input/event1" to catch raw data. This is my area setting to turn page.
 
-![Page Setting](Doc/Page.jpg)
+![Page Setting](Doc/Page.png)
 
 ## Note
 This project is just prototype verification because I found the Wi-Fi of Clara HD is very bad. It often closes the Wi-Fi suddenly. I don't find a solution to solve it. If the Wi-Fi is closed, I must back to Home screen to turn on the Wi-Fi again. Then I can go on to read a book with my KoboPageTurner.
