@@ -12,13 +12,13 @@ fi
 
 # create work dirs
 [ ! -e "$Logs" ] && mkdir -p "$Logs" >/dev/null 2>&1
-[ ! -e "$UserConfig" ] && echo #UNINSTALL > $UserConfig
 
 # copy files to $Logs
 [ ! -e "$Logs/$Server" ] && cp $KS_HOME/$Server $Logs
 [ ! -e "$Logs/$TestScript" ] && cp $KS_HOME/$TestScript $Logs
 [ ! -e "$Logs/run.sh" ] && cp $KS_HOME/run.sh $Logs
 [ ! -e "$Logs/config.sh" ] && cp $KS_HOME/config* $Logs
+[ ! -e "$UserConfig" ] && cp $KS_HOME/koboserver.cfg $Logs
 
 # output to log
 $Logs/run.sh >> $Logs/koboserver.log 2>&1 &

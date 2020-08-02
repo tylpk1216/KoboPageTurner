@@ -4,11 +4,15 @@ import (
     "context"
     "fmt"
     "io"
+    "io/ioutil"
     "net/http"
     "os"
     "strconv"
+    "strings"
     "time"
 )
+
+const PID_FILE = "/mnt/onboard/.koboserver/PID"
 
 //----------------------------------------------------------------------
 /*
@@ -37,6 +41,17 @@ var gEvent = []byte{
     0x00, 0x00, 0x00, 0x00, 0x00, 0x20, 0x02, 0x00,  0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
 }
 
+type eventData struct {
+    eventFile string
+
+    leftX int
+    leftY int
+
+    rightX int
+    rightY int
+}
+
+var eventItem eventData
 var touchEvent *os.File
 
 func addTimeStamp(buf []byte) error {
@@ -106,7 +121,7 @@ func pixelToValue(x, y int) (int, int) {
 func setXY(x, y int) {
     xValue, yValue := pixelToValue(x, y)
 
-    fmt.Println("After pixelToValue", xValue, yValue)
+    //fmt.Println("After pixelToValue", xValue, yValue)
 
     // little endian
     x1 := xValue % 256
@@ -125,12 +140,12 @@ func setXY(x, y int) {
 }
 
 func leftPage() error {
-    setXY(800, 500)
+    setXY(eventItem.leftX, eventItem.leftY)
     return TouchPage(gEvent)
 }
 
 func rightPage() error {
-    setXY(100, 500)
+    setXY(eventItem.rightX, eventItem.rightY)
     return TouchPage(gEvent)
 }
 
@@ -150,16 +165,112 @@ func sendResponse(w http.ResponseWriter, err error) {
     io.WriteString(w, fmt.Sprintf("%v(%d) (%v)", t, n, err))
 }
 
+func changeWiFiSetting(choice string) error {
+    iniFile := "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf"
+
+    content, err := ioutil.ReadFile(iniFile)
+	if err != nil {
+		return err
+	}
+
+    key := "ForceWifiOn"
+    keyOff := fmt.Sprintf("%s=false", key)
+    keyOn := fmt.Sprintf("%s=true", key)
+    finalKey := fmt.Sprintf("%s=%s", key, choice)
+
+	s := string(content)
+	i1 := strings.Index(s, keyOff)
+	i2 := strings.Index(s, keyOn)
+	if i1 == -1 && i2 == -1{
+        s += fmt.Sprintf("\n%s\n%s\n\n", "[DeveloperSettings]", finalKey)
+	} else {
+        s = strings.Replace(s, keyOff, finalKey, 1)
+	    s = strings.Replace(s, keyOn, finalKey, 1)
+	}
+
+    return ioutil.WriteFile(iniFile, []byte(s), 0644)
+}
+
+func deletePID() {
+    err := os.Remove(PID_FILE)
+    if err != nil {
+        fmt.Println(err)
+    }
+}
+
+func getData(content, key, value string) string {
+    i := strings.Index(content, key)
+    if i == -1 {
+        fmt.Printf("%s=%s(default)\n", key, value)
+        return value
+    }
+
+    s := content[i+len(key)+1:]
+    res := ""
+    for i := 0; i < len(s); i++ {
+        if s[i] == '\r' || s[i] == '\n' {
+            break
+        }
+        res += string(s[i])
+    }
+
+    if len(s) == 0 {
+        return value
+    }
+
+    return res
+}
+
+func atoi(s string) int {
+    n, err := strconv.Atoi(s)
+    if err != nil {
+        return 0
+    }
+    return n
+}
+
+func getEventData() error {
+    cfgFile := "/mnt/onboard/.koboserver/koboserver.cfg"
+    content, err := ioutil.ReadFile(cfgFile)
+	if err != nil {
+		return err
+	}
+
+	s := string(content)
+
+    eventItem.eventFile = getData(s, "eventFile", "/dev/input/event1")
+    eventItem.leftX = atoi(getData(s, "leftX", "800"))
+    eventItem.leftY = atoi(getData(s, "leftY", "500"))
+    eventItem.rightX = atoi(getData(s, "rightX", "100"))
+    eventItem.rightY = atoi(getData(s, "rightY", "500"))
+
+    fmt.Println("config", eventItem)
+
+    return nil
+}
+
 func main() {
-    fmt.Println("Prepare to run Server")
+    fmt.Println("Prepare to run Server", time.Now())
+
+    defer deletePID()
 
     var err error
-    touchEvent, err = os.OpenFile("/dev/input/event1", os.O_RDWR, 0777)
+    err = getEventData()
+    if err != nil {
+        panic(fmt.Errorf("getEventData Error (%v) \n", err))
+    }
+
+    touchEvent, err = os.OpenFile(eventItem.eventFile, os.O_RDWR, 0777)
     if err != nil {
         panic(fmt.Errorf("Open File Error (%v) \n", err))
     }
 
     defer touchEvent.Close()
+
+    err = changeWiFiSetting("true")
+    if err != nil {
+        panic(err)
+    }
 
     m := http.NewServeMux()
     s := http.Server{Addr: ":80", Handler: m}
@@ -169,9 +280,7 @@ func main() {
 
     m.HandleFunc("/exit", func(w http.ResponseWriter, r *http.Request) {
         fmt.Println("Clsoe Server")
-
-        err = os.Remove("/mnt/onboard/.koboserver/PID")
-        sendResponse(w, err)
+        sendResponse(w, nil)
 
         waitSecs := 3
         closeTimer := time.NewTimer(time.Duration(waitSecs) * time.Second)
@@ -186,5 +295,10 @@ func main() {
         panic(err)
     }
 
-    fmt.Println("Server Finished")
+    err = changeWiFiSetting("false")
+    if err != nil {
+        fmt.Println(err)
+    }
+
+    fmt.Println("Server Finished", time.Now())
 }
