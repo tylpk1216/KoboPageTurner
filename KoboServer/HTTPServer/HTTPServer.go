@@ -13,6 +13,8 @@ import (
 )
 
 const PID_FILE = "/mnt/onboard/.koboserver/PID"
+const CFG_FILE = "/mnt/onboard/.koboserver/koboserver.cfg"
+const KOBO_INI_FILE = "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf"
 
 //----------------------------------------------------------------------
 /*
@@ -166,9 +168,7 @@ func sendResponse(w http.ResponseWriter, err error) {
 }
 
 func changeWiFiSetting(choice string) error {
-    iniFile := "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf"
-
-    content, err := ioutil.ReadFile(iniFile)
+    content, err := ioutil.ReadFile(KOBO_INI_FILE)
     if err != nil {
         return err
     }
@@ -188,7 +188,7 @@ func changeWiFiSetting(choice string) error {
         s = strings.Replace(s, keyOn, finalKey, 1)
     }
 
-    return ioutil.WriteFile(iniFile, []byte(s), 0644)
+    return ioutil.WriteFile(KOBO_INI_FILE, []byte(s), 0644)
 }
 
 func deletePID() {
@@ -230,8 +230,7 @@ func atoi(s string) int {
 }
 
 func getEventData() error {
-    cfgFile := "/mnt/onboard/.koboserver/koboserver.cfg"
-    content, err := ioutil.ReadFile(cfgFile)
+    content, err := ioutil.ReadFile(CFG_FILE)
     if err != nil {
         return err
     }
