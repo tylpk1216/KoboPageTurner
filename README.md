@@ -5,6 +5,15 @@ It can run on different Kobo device in theory. Just make sure two things:
 01. What is the touch panel of your Kobo device?
 02. Do we adjust X or Y to match your panel ?
 
+You could modify the settings of "/mnt/onboard/.koboserver/koboserver.cfg" for your Kobo device. The origin point of Clara HD is right-top.
+```
+eventFile=/dev/input/event1
+leftX=800
+leftY=500
+rightX=100
+rightY=500
+```
+
 ## Test Video
 Please visit [here](https://youtu.be/ADpR_Omy-PE "KoboPageTurner").
 
@@ -41,8 +50,12 @@ You colud add the setting in your "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf". M
 ForceWifiOn=true
 ```
 
+According to my test, if I used the "ForceWifiOn=true" setting, the Wi-Fi of Clara HD was always on even I turned off the Wi-Fi. I think this is not a good solution.
+
+I tried to modify the "ForceWifiOn=true" setting when the Web Server ran, and modified the "ForceWifiOn=false" setting when the Web Server exited. However, this flow was not usefull. My Wi-Fi could not work after turning on / turning off the switch button many times. This flow is not the solution too.
+
 ## Acknowledge
-Thanks to KoboCloud. I got this idea from it.
+Thanks to [KoboCloud](https://github.com/fsantini/KoboCloud). I got this idea from it.
 
 ## Licsnse
 MIT.
