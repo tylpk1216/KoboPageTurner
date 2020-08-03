@@ -7,6 +7,7 @@ import (
     "io/ioutil"
     "net/http"
     "os"
+    "os/exec"
     "strconv"
     "strings"
     "time"
@@ -188,7 +189,13 @@ func changeWiFiSetting(choice string) error {
         s = strings.Replace(s, keyOn, finalKey, 1)
     }
 
-    return ioutil.WriteFile(KOBO_INI_FILE, []byte(s), 0644)
+    err = ioutil.WriteFile(KOBO_INI_FILE, []byte(s), 0644)
+
+    // sync file system.
+    cmd := exec.Command("sync")
+    cmd.Run()
+
+    return err
 }
 
 func deletePID() {
