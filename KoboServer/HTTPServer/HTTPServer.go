@@ -169,24 +169,24 @@ func changeWiFiSetting(choice string) error {
     iniFile := "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf"
 
     content, err := ioutil.ReadFile(iniFile)
-	if err != nil {
-		return err
-	}
+    if err != nil {
+        return err
+    }
 
     key := "ForceWifiOn"
     keyOff := fmt.Sprintf("%s=false", key)
     keyOn := fmt.Sprintf("%s=true", key)
     finalKey := fmt.Sprintf("%s=%s", key, choice)
 
-	s := string(content)
-	i1 := strings.Index(s, keyOff)
-	i2 := strings.Index(s, keyOn)
-	if i1 == -1 && i2 == -1{
+    s := string(content)
+    i1 := strings.Index(s, keyOff)
+    i2 := strings.Index(s, keyOn)
+    if i1 == -1 && i2 == -1 {
         s += fmt.Sprintf("\n%s\n%s\n\n", "[DeveloperSettings]", finalKey)
-	} else {
+    } else {
         s = strings.Replace(s, keyOff, finalKey, 1)
-	    s = strings.Replace(s, keyOn, finalKey, 1)
-	}
+        s = strings.Replace(s, keyOn, finalKey, 1)
+    }
 
     return ioutil.WriteFile(iniFile, []byte(s), 0644)
 }
@@ -232,11 +232,11 @@ func atoi(s string) int {
 func getEventData() error {
     cfgFile := "/mnt/onboard/.koboserver/koboserver.cfg"
     content, err := ioutil.ReadFile(cfgFile)
-	if err != nil {
-		return err
-	}
+    if err != nil {
+        return err
+    }
 
-	s := string(content)
+    s := string(content)
 
     eventItem.eventFile = getData(s, "eventFile", "/dev/input/event1")
     eventItem.leftX = atoi(getData(s, "leftX", "800"))
