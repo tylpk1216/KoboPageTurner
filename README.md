@@ -1,5 +1,5 @@
 ## KoboPageTurner
-When I knew the KoboCloud project, I wanted to follow its concept to run a Web Server on Kobo device(Clara HD). When the Web Sever receives API, it will simulate to turn a page by sending touch event to touch panel.
+When I knew the [KoboCloud](https://github.com/fsantini/KoboCloud) project, I wanted to follow its concept to run a Web Server on Kobo device(Clara HD). When the Web Sever receives API, it will simulate to turn a page by sending touch event to touch panel.
 
 It can run on different Kobo device in theory. Just make sure two things:
 01. What is the touch panel of your Kobo device?
