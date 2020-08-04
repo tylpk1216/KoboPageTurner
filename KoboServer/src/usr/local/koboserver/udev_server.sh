@@ -18,6 +18,7 @@ fi
 [ ! -e "$Logs/$TestScript" ] && cp $KS_HOME/$TestScript $Logs
 [ ! -e "$Logs/run.sh" ] && cp $KS_HOME/run.sh $Logs
 [ ! -e "$Logs/config.sh" ] && cp $KS_HOME/config* $Logs
+[ ! -e "$Logs/uninstall.sh" ] && cp $KS_HOME/uninstall.sh $Logs
 [ ! -e "$UserConfig" ] && cp $KS_HOME/koboserver.cfg $Logs
 
 # output to log
