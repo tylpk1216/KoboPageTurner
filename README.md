@@ -30,11 +30,13 @@ Before you use it, please go to "Note" section.
 02. Put KoboRoot.tgz to .kobo folder of your Kobo device.
 03. Reboot device.
 04. Turn on Wi-Fi on Kobo device. The Web Server will run on port 80.
-05. Use Android(HTTP Shortcuts) to send HTTP request.
+05. Use Android(HTTP Request Shortcuts) to send HTTP request.
 06. Use three API to control the Web Server.
 * GET /left -> left page.
 * GET /right -> right page.
 * GET /exit -> shutdown the Web Server.
+
+You could use my (example)[AndroidClient/HTTP Request Shortcuts/shortcuts.json] and import to your HTTP Request Shortcuts app.
 
 ## My Page Setting
 Actually I do not know the formula of pixelToValue when sending the touch event. I used "cat /dev/input/event1" to catch raw data. This is my area setting to turn page.

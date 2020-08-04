@@ -1,0 +1,29 @@
+{
+  "categories": [
+    {
+      "id": "24d98580-f106-4c6e-8524-a409719e3498",
+      "name": "Shortcuts",
+      "shortcuts": [
+        {
+          "iconName": "flat_color_lightbulb",
+          "id": "44d6f15a-a7a6-432e-b1cd-b0c13774abcc",
+          "name": "Left",
+          "url": "http://192.168.1.7/left"
+        },
+        {
+          "iconName": "flat_color_star",
+          "id": "44c4384c-c9c0-4cc9-a50f-63ead0e157f3",
+          "name": "Right",
+          "url": "http://192.168.1.7/right"
+        },
+        {
+          "iconName": "flat_color_brightness_6",
+          "id": "2c766658-0057-4185-8bf4-35e7e0cafec8",
+          "name": "Exit",
+          "url": "http://192.198.1.7/exit"
+        }
+      ]
+    }
+  ],
+  "version": 39
+}
