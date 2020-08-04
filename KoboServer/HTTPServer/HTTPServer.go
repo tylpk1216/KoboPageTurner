@@ -7,7 +7,6 @@ import (
     "io/ioutil"
     "net/http"
     "os"
-    "os/exec"
     "strconv"
     "strings"
     "time"
@@ -168,36 +167,6 @@ func sendResponse(w http.ResponseWriter, err error) {
     io.WriteString(w, fmt.Sprintf("%v(%d) (%v)", t, n, err))
 }
 
-func changeWiFiSetting(choice string) error {
-    content, err := ioutil.ReadFile(KOBO_INI_FILE)
-    if err != nil {
-        return err
-    }
-
-    key := "ForceWifiOn"
-    keyOff := fmt.Sprintf("%s=false", key)
-    keyOn := fmt.Sprintf("%s=true", key)
-    finalKey := fmt.Sprintf("%s=%s", key, choice)
-
-    s := string(content)
-    i1 := strings.Index(s, keyOff)
-    i2 := strings.Index(s, keyOn)
-    if i1 == -1 && i2 == -1 {
-        s += fmt.Sprintf("\n%s\n%s\n\n", "[DeveloperSettings]", finalKey)
-    } else {
-        s = strings.Replace(s, keyOff, finalKey, 1)
-        s = strings.Replace(s, keyOn, finalKey, 1)
-    }
-
-    err = ioutil.WriteFile(KOBO_INI_FILE, []byte(s), 0644)
-
-    // sync file system.
-    cmd := exec.Command("sync")
-    cmd.Run()
-
-    return err
-}
-
 func deletePID() {
     err := os.Remove(PID_FILE)
     if err != nil {
@@ -273,11 +242,6 @@ func main() {
 
     defer touchEvent.Close()
 
-    err = changeWiFiSetting("true")
-    if err != nil {
-        panic(err)
-    }
-
     m := http.NewServeMux()
     s := http.Server{Addr: ":80", Handler: m}
 
@@ -299,11 +263,6 @@ func main() {
 
     if err = s.ListenAndServe(); err != nil && err != http.ErrServerClosed {
         panic(err)
-    }
-
-    err = changeWiFiSetting("false")
-    if err != nil {
-        fmt.Println(err)
     }
 
     fmt.Println("Server Finished", time.Now())
