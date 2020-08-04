@@ -36,7 +36,7 @@ Before you use it, please go to "Note" section.
 * GET /right -> right page.
 * GET /exit -> shutdown the Web Server.
 
-You could use my [example](AndroidClient/HTTPShortcuts/shortcuts.json) and import to your HTTP Request Shortcuts app.
+You could use my [example](AndroidClient/HTTPShortcuts/shortcuts.json), modify your ip address, and import to your HTTP Request Shortcuts app.
 
 ## My Page Setting
 Actually I do not know the formula of pixelToValue when sending the touch event. I used "cat /dev/input/event1" to catch raw data. This is my area setting to turn page.
