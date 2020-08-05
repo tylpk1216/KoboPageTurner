@@ -25,18 +25,19 @@ Please visit [here](https://youtu.be/ADpR_Omy-PE "KoboPageTurner").
 I used Kobo Clard HD to test this concept.  
 System: 4.22.15190(efcb227b40, 2020/6/22).
 
-Before you use it, please go to "Note" section.
-01. Run KoboServer/makeKoboRoot.sh to get KoboRoot.tgz.
+Before you use it, please view the "Note" section.
+01. Run KoboServer/makeKoboRoot.sh to get KoboRoot.tgz or you could use release version.
 02. Put KoboRoot.tgz to .kobo folder of your Kobo device.
 03. Reboot device.
-04. Turn on Wi-Fi on Kobo device. The Web Server will run on port 80.
-05. Use Android(HTTP Request Shortcuts) to send HTTP request.
-06. Use three API to control the Web Server.
+04. Check "ForceWifiOn" item.
+05. Turn on Wi-Fi on Kobo device. The Web Server will run on port 80.
+06. Use Android(HTTP Request Shortcuts) to send HTTP request.
+07. Use three API to control the Web Server.
 * GET /left -> left page.
 * GET /right -> right page.
-* GET /exit -> shutdown the Web Server.
-
+* GET /exit -> shutdown the Web Server.  
 You could use my [example](AndroidClient/HTTPShortcuts/shortcuts.json), modify your ip address, and import to your HTTP Request Shortcuts app.
+08. After closing the Web Server, uncheck "ForceWifiOn" item. Then turn off Wi-Fi.
 
 ## My Page Setting
 Actually I do not know the formula of pixelToValue when sending the touch event. I used "cat /dev/input/event1" to catch raw data. This is my area setting to turn page.
@@ -60,7 +61,7 @@ According to my test, if I used the "ForceWifiOn=true" setting, the Wi-Fi of Cla
 I tried to modify the "ForceWifiOn=true" setting when the Web Server ran, and modified the "ForceWifiOn=false" setting when the Web Server exited. However, this flow was not usefull. My Wi-Fi could not work after turning on / turning off the switch button many times. This flow is not the solution too.
 
 Update(2020/08/04):  
-The final solution is to add "EnableDebugServices=true" in the "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf".
+The final solution is to add "EnableDebugServices=true" in the "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf". The side-effect is that you will have many system logs in "/mnt/onboard/.kobo". When you turn on Wi-Fi, it will have one log. You turn on Wi-Fi next time, you have another log again.
 ```
 [DeveloperSettings]
 EnableDebugServices=true
@@ -76,6 +77,3 @@ Thanks to [KoboCloud](https://github.com/fsantini/KoboCloud). I got this idea fr
 
 ## Licsnse
 MIT.
-
-
-
