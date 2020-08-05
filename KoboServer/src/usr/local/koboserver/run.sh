@@ -6,7 +6,7 @@
 # The $KS_HOME is $Logs at this point because we call run.sh in $Logs.
 
 # check if KoboServer contains the line "uninstall=true"
-if grep -q '^uninstall=true\s' $UserConfig; then
+if grep -q '^uninstall=true' $UserConfig; then
     echo "Uninstalling KoboServer!"
     $KS_HOME/uninstall.sh
     exit 0
