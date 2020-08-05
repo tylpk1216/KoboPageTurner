@@ -72,7 +72,7 @@ Then we must follow steps below to keep Wi-Fi on when we use KoboPageTurner.
 03. Turn on the Wi-Fi.
 04. Use stable wireless network(optional, I must use my cell phone to get stable network for Clara HD).
 
-## Acknowledge
+## Acknowledgement
 Thanks to [KoboCloud](https://github.com/fsantini/KoboCloud). I got this idea from it.
 
 ## Licsnse
