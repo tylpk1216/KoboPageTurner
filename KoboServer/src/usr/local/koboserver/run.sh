@@ -12,6 +12,10 @@ if grep -q '^uninstall=true' $UserConfig; then
     exit 0
 fi
 
+# delete system log
+rm -f /mnt/onboard/.kobo/dmesg-*
+rm -f /mnt/onboard/.kobo/syslog-*
+
 # check instance exist
 running=$KS_HOME/PID
 if [ -e "$running" ]; then
