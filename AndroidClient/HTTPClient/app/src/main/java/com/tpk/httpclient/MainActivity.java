@@ -158,6 +158,11 @@ public class MainActivity extends AppCompatActivity {
         Log.d(mTag, sCode);
         mNoteView.setText("Your key code is " + sCode);
 
+        if (keyCode == 4) {
+            // let back key works.
+            return super.onKeyDown(keyCode, event);
+        }
+
         if (mLeftText.isFocused()) {
             mLeftCode = keyCode;
             mLeftText.setText(sCode);
@@ -174,7 +179,6 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
-        //return super.onKeyDown(keyCode, event);
         return true;
     }
 
