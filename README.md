@@ -17,8 +17,11 @@ rightY=500
 
 ## Test Video
 [Web Server + Android App(HTTP Shortcuts)](https://youtu.be/ADpR_Omy-PE "KoboPageTurner").
+
 [Web Server + Android App(HTTPClient + Bluetooth keyboard)](https://youtu.be/PjRinWhRWPo "KoboPageTurner").
+
 [Web Server + Android App(HTTPClient + Bluetooth page-turner(BOOX))](https://youtu.be/-BLY8ispxj8 "KoboPageTurner").
+
 [Web Server + Android App(HTTPClient + Bluetooth page-turner(Logitech R500))](https://youtu.be/FerqFQrJcjs "KoboPageTurner").
 
 ## Architecture
@@ -30,10 +33,10 @@ rightY=500
 03. Reboot device.
 
 ## Usage
-I used Kobo Clard HD to test this concept.
+I used Kobo Clard HD to test this concept.  
 System: 4.22.15190(efcb227b40, 2020/6/22).
 
-01. Connect your kobo device to PC.
+01. Connect your Kobo device to PC.
 02. Add below setting in the "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf".
 ```
 [DeveloperSettings]
@@ -85,10 +88,10 @@ ForceWifiOn=true
 
 According to my test, if I used the "ForceWifiOn=true" setting, the Wi-Fi of Clara HD was always on even I turned off the Wi-Fi. I think this is not a good solution.
 
-I tried to modify the "ForceWifiOn=true" setting when the Web Server ran, and modified the "ForceWifiOn=false" setting when the Web Server exited. However, this flow was not usefull. My Wi-Fi could not work after turning on / turning off the switch button many times. This flow is not the solution too.
+I tried to modify the "ForceWifiOn=true" setting when the Web Server ran, and modified the "ForceWifiOn=false" setting when the Web Server exited. However, this flow was not usefull. My Wi-Fi could not work after turning on or turning off the switch button many times. This flow is not the solution too.
 
 Update(2020/08/04):
-The final solution is to add "EnableDebugServices=true" in the "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf". The side-effect is that you will have many system logs in "/mnt/onboard/.kobo". When you turn on Wi-Fi, it will have one log. You turn on Wi-Fi next time, you have another log again. My solution is to delete these logs when calling "run.sh".
+The final solution is to add "EnableDebugServices=true" in the "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf". The side-effect is that you will have many system logs in "/mnt/onboard/.kobo". When you turn on Wi-Fi, it will have one log. You turn on Wi-Fi next time, you have another log again. The workaround is to delete these logs when calling "run.sh".
 ```
 [DeveloperSettings]
 EnableDebugServices=true
