@@ -32,9 +32,14 @@ rightY=500
 02. Put KoboRoot.tgz to .kobo folder of your Kobo device.
 03. Reboot device.
 
+## Uninstallation
+01. Edit "uninstall=true" in "/mnt/onboard/.koboserver/koboserver.cfg".
+02. Turn on the Wi-Fi.
+03. All materials will be deleted except "/mnt/onboard/.koboserver" folder.
+
 ## Usage
-I used Kobo Clard HD to test this concept.  
-System: 4.22.15190(efcb227b40, 2020/6/22).
+I used Kobo Clara HD to test this concept.  
+System: 4.23.15505
 
 01. Connect your Kobo device to PC.
 02. Add below setting in the "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf".
