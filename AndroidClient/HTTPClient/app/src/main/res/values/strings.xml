@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HTTPClient</string>
+
+    <string name="txt_guide">\n  How to use?\n\n  1. Add the ip of device.\n  2. Click the code field, and click your key from your page-turner.\n  3. Click \"LEFT PAGE\" or \"RIGHT PAGE\" to test it.\n  4. Click \"CLOSE SERVER\" to close Server on Kobo device.\n</string>
+    <string name="txt_ip">  Server IP (Kobo Device)</string>
+    <string name="txt_leftcode">  Left Code</string>
+    <string name="txt_rightcode">  Right Code</string>
+
+    <string name="btn_exit">CLOSE SERVER</string>
+    <string name="btn_left">LEFT PAGE</string>
+    <string name="btn_right">RIGHT PAGE</string>
+</resources>

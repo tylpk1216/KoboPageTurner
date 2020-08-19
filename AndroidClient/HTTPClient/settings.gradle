@@ -1,0 +1,2 @@
+rootProject.name='HTTPClient'
+include ':app', ':volley'
