@@ -109,8 +109,12 @@ Then we must follow steps below to keep Wi-Fi on when we use KoboPageTurner.
 04. Use stable wireless network(optional, I must use my cell phone to get stable network for Clara HD).
 
 ## Hardware Implement - ESP8266
-Finally, I used ESP8266 (ESP-12S) to do hardware page-turner.
 ![ESP8266](Doc/ESP8266.png)
+
+Finally, I used ESP8266 (ESP-12S) to do hardware page-turner.
+
+This is final architecture.
+
 ![ESP8266 Architecture](Doc/ESP8266_Arch.jpg)
 
 ## Acknowledgement
