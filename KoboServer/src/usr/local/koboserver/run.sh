@@ -20,7 +20,7 @@ rm -f /mnt/onboard/.kobo/syslog-*
 running=$KS_HOME/PID
 if [ -e "$running" ]; then
     echo "Server is running."
-    exit 0
+    #exit 0
 fi
 
 echo "Run" > $running
