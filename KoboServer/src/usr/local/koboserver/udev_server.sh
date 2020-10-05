@@ -24,4 +24,4 @@ if [ ! -e "$Logs" ]; then
 fi
 
 # output to log
-$Logs/run.sh >> $Logs/koboserver.log 2>&1 &
+$Logs/run.sh > $Logs/koboserver.log 2>&1 &
