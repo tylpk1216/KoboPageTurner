@@ -39,7 +39,7 @@ rightY=500
 03. All materials will be deleted except "/mnt/onboard/.koboserver" folder.
 
 ## Usage
-I used Kobo Clara HD to test this concept.  
+I used Kobo Clara HD to test this concept.
 System: 4.23.15505
 
 01. Connect your Kobo device to PC.
@@ -107,6 +107,11 @@ Then we must follow steps below to keep Wi-Fi on when we use KoboPageTurner.
 02. Keep "ForceWifiOn" true.
 03. Turn on the Wi-Fi.
 04. Use stable wireless network(optional, I must use my cell phone to get stable network for Clara HD).
+
+## Hardware Implement - ESP8266
+Finally, I used ESP8266 (ESP-12S) to do hardware page-turner.
+![ESP8266](Doc/ESP8266.png)
+![ESP8266 Architecture](Doc/ESP8266_Arch.jpg)
 
 ## Acknowledgement
 Thanks to [KoboCloud](https://github.com/fsantini/KoboCloud). I got this idea from it.
