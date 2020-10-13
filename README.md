@@ -25,6 +25,8 @@ rightY=500
 
 [Web Server + Android App(HTTPClient + Bluetooth page-turner(Logitech R500))](https://youtu.be/FerqFQrJcjs "KoboPageTurner").
 
+[Web Server + ESP8266(ESP-12S, DC Converter, 2 x AAA battery)](https://youtu.be/mk268fqPg5M "KoboPageTurner").
+
 ## Architecture
 ![Architecture](Doc/KoboPageTurner.png)
 
