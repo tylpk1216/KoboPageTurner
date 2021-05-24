@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface KoboPageTurnerTests : XCTestCase
+@interface KoboPageTurnerAppTests : XCTestCase
 
 @end
 
-@implementation KoboPageTurnerTests
+@implementation KoboPageTurnerAppTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL(^)(UIView *view))test
 {

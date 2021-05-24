@@ -7,13 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00E356F31AD99517003FC87E /* KoboPageTurnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* KoboPageTurnerTests.m */; };
+		00E356F31AD99517003FC87E /* KoboPageTurnerAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* KoboPageTurnerAppTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		5AA9E0C0178ED1E0FAF3218D /* libPods-KoboPageTurner-KoboPageTurnerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0168653FA687C705CC3CFB3 /* libPods-KoboPageTurner-KoboPageTurnerTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		BE548455015E6756B5410728 /* libPods-KoboPageTurner.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E562E1B38D4DCD9363240E /* libPods-KoboPageTurner.a */; };
+		CAFD4956C10136BE60B00052 /* libPods-KoboPageTurnerApp-KoboPageTurnerAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACB6A334D22DA4BC26ED7FC3 /* libPods-KoboPageTurnerApp-KoboPageTurnerAppTests.a */; };
+		EAF067C29D78BCD97B6194A2 /* libPods-KoboPageTurnerApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5FFB7AD81A93E6950376FBA8 /* libPods-KoboPageTurnerApp.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -22,28 +22,28 @@
 			containerPortal = 83CBB9F71A601CBA00E9B192 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 13B07F861A680F5B00A75B9A;
-			remoteInfo = KoboPageTurner;
+			remoteInfo = KoboPageTurnerApp;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		00E356EE1AD99517003FC87E /* KoboPageTurnerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoboPageTurnerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		00E356EE1AD99517003FC87E /* KoboPageTurnerAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KoboPageTurnerAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		00E356F21AD99517003FC87E /* KoboPageTurnerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KoboPageTurnerTests.m; sourceTree = "<group>"; };
-		13B07F961A680F5B00A75B9A /* KoboPageTurner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoboPageTurner.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = KoboPageTurner/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = KoboPageTurner/AppDelegate.m; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = KoboPageTurner/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KoboPageTurner/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KoboPageTurner/main.m; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = KoboPageTurner/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89E1EDB945038C810120A8C0 /* Pods-KoboPageTurner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoboPageTurner.debug.xcconfig"; path = "Target Support Files/Pods-KoboPageTurner/Pods-KoboPageTurner.debug.xcconfig"; sourceTree = "<group>"; };
-		99E562E1B38D4DCD9363240E /* libPods-KoboPageTurner.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KoboPageTurner.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B831B9F4A51DB8661F15D0E7 /* Pods-KoboPageTurner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoboPageTurner.release.xcconfig"; path = "Target Support Files/Pods-KoboPageTurner/Pods-KoboPageTurner.release.xcconfig"; sourceTree = "<group>"; };
-		D0168653FA687C705CC3CFB3 /* libPods-KoboPageTurner-KoboPageTurnerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KoboPageTurner-KoboPageTurnerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DEFA359B43D1C77683D27D7D /* Pods-KoboPageTurner-KoboPageTurnerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoboPageTurner-KoboPageTurnerTests.release.xcconfig"; path = "Target Support Files/Pods-KoboPageTurner-KoboPageTurnerTests/Pods-KoboPageTurner-KoboPageTurnerTests.release.xcconfig"; sourceTree = "<group>"; };
+		00E356F21AD99517003FC87E /* KoboPageTurnerAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KoboPageTurnerAppTests.m; sourceTree = "<group>"; };
+		06AA3E66D50E9A7EB04DC4C3 /* Pods-KoboPageTurnerApp-KoboPageTurnerAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoboPageTurnerApp-KoboPageTurnerAppTests.debug.xcconfig"; path = "Target Support Files/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* KoboPageTurnerApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoboPageTurnerApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = KoboPageTurnerApp/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = KoboPageTurnerApp/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = KoboPageTurnerApp/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = KoboPageTurnerApp/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = KoboPageTurnerApp/main.m; sourceTree = "<group>"; };
+		5D2882D4B944024070ABC64A /* Pods-KoboPageTurnerApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoboPageTurnerApp.release.xcconfig"; path = "Target Support Files/Pods-KoboPageTurnerApp/Pods-KoboPageTurnerApp.release.xcconfig"; sourceTree = "<group>"; };
+		5FFB7AD81A93E6950376FBA8 /* libPods-KoboPageTurnerApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KoboPageTurnerApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		802ADFE53092145C9C55AE88 /* Pods-KoboPageTurnerApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoboPageTurnerApp.debug.xcconfig"; path = "Target Support Files/Pods-KoboPageTurnerApp/Pods-KoboPageTurnerApp.debug.xcconfig"; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = KoboPageTurnerApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		95D0B45BBB71669FCEC239B5 /* Pods-KoboPageTurnerApp-KoboPageTurnerAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoboPageTurnerApp-KoboPageTurnerAppTests.release.xcconfig"; path = "Target Support Files/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		ACB6A334D22DA4BC26ED7FC3 /* libPods-KoboPageTurnerApp-KoboPageTurnerAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-KoboPageTurnerApp-KoboPageTurnerAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F28FE9812F159ACF477393F6 /* Pods-KoboPageTurner-KoboPageTurnerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KoboPageTurner-KoboPageTurnerTests.debug.xcconfig"; path = "Target Support Files/Pods-KoboPageTurner-KoboPageTurnerTests/Pods-KoboPageTurner-KoboPageTurnerTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AA9E0C0178ED1E0FAF3218D /* libPods-KoboPageTurner-KoboPageTurnerTests.a in Frameworks */,
+				CAFD4956C10136BE60B00052 /* libPods-KoboPageTurnerApp-KoboPageTurnerAppTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,20 +59,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE548455015E6756B5410728 /* libPods-KoboPageTurner.a in Frameworks */,
+				EAF067C29D78BCD97B6194A2 /* libPods-KoboPageTurnerApp.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		00E356EF1AD99517003FC87E /* KoboPageTurnerTests */ = {
+		00E356EF1AD99517003FC87E /* KoboPageTurnerAppTests */ = {
 			isa = PBXGroup;
 			children = (
-				00E356F21AD99517003FC87E /* KoboPageTurnerTests.m */,
+				00E356F21AD99517003FC87E /* KoboPageTurnerAppTests.m */,
 				00E356F01AD99517003FC87E /* Supporting Files */,
 			);
-			path = KoboPageTurnerTests;
+			path = KoboPageTurnerAppTests;
 			sourceTree = "<group>";
 		};
 		00E356F01AD99517003FC87E /* Supporting Files */ = {
@@ -83,7 +83,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* KoboPageTurner */ = {
+		13B07FAE1A68108700A75B9A /* KoboPageTurnerApp */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -93,17 +93,29 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = KoboPageTurner;
+			name = KoboPageTurnerApp;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				99E562E1B38D4DCD9363240E /* libPods-KoboPageTurner.a */,
-				D0168653FA687C705CC3CFB3 /* libPods-KoboPageTurner-KoboPageTurnerTests.a */,
+				5FFB7AD81A93E6950376FBA8 /* libPods-KoboPageTurnerApp.a */,
+				ACB6A334D22DA4BC26ED7FC3 /* libPods-KoboPageTurnerApp-KoboPageTurnerAppTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		60294CD155C0CF2371A40A55 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				802ADFE53092145C9C55AE88 /* Pods-KoboPageTurnerApp.debug.xcconfig */,
+				5D2882D4B944024070ABC64A /* Pods-KoboPageTurnerApp.release.xcconfig */,
+				06AA3E66D50E9A7EB04DC4C3 /* Pods-KoboPageTurnerApp-KoboPageTurnerAppTests.debug.xcconfig */,
+				95D0B45BBB71669FCEC239B5 /* Pods-KoboPageTurnerApp-KoboPageTurnerAppTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -116,12 +128,12 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* KoboPageTurner */,
+				13B07FAE1A68108700A75B9A /* KoboPageTurnerApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
-				00E356EF1AD99517003FC87E /* KoboPageTurnerTests */,
+				00E356EF1AD99517003FC87E /* KoboPageTurnerAppTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
-				8C3B2EDBCC290F5E10C28358 /* Pods */,
+				60294CD155C0CF2371A40A55 /* Pods */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -131,67 +143,56 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* KoboPageTurner.app */,
-				00E356EE1AD99517003FC87E /* KoboPageTurnerTests.xctest */,
+				13B07F961A680F5B00A75B9A /* KoboPageTurnerApp.app */,
+				00E356EE1AD99517003FC87E /* KoboPageTurnerAppTests.xctest */,
 			);
 			name = Products;
-			sourceTree = "<group>";
-		};
-		8C3B2EDBCC290F5E10C28358 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				89E1EDB945038C810120A8C0 /* Pods-KoboPageTurner.debug.xcconfig */,
-				B831B9F4A51DB8661F15D0E7 /* Pods-KoboPageTurner.release.xcconfig */,
-				F28FE9812F159ACF477393F6 /* Pods-KoboPageTurner-KoboPageTurnerTests.debug.xcconfig */,
-				DEFA359B43D1C77683D27D7D /* Pods-KoboPageTurner-KoboPageTurnerTests.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		00E356ED1AD99517003FC87E /* KoboPageTurnerTests */ = {
+		00E356ED1AD99517003FC87E /* KoboPageTurnerAppTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "KoboPageTurnerTests" */;
+			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "KoboPageTurnerAppTests" */;
 			buildPhases = (
-				5EB6D8F55ADEAEAE3CFE6AD0 /* [CP] Check Pods Manifest.lock */,
+				B9295AFC569CCE665FF9BD5C /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				826A5C258C16832C16CE4713 /* [CP] Embed Pods Frameworks */,
-				EAD459C6223BA496792E9181 /* [CP] Copy Pods Resources */,
+				9B9136158F78C8780D3A1C6B /* [CP] Embed Pods Frameworks */,
+				157E31E63F7F8B42E51B20D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				00E356F51AD99517003FC87E /* PBXTargetDependency */,
 			);
-			name = KoboPageTurnerTests;
-			productName = KoboPageTurnerTests;
-			productReference = 00E356EE1AD99517003FC87E /* KoboPageTurnerTests.xctest */;
+			name = KoboPageTurnerAppTests;
+			productName = KoboPageTurnerAppTests;
+			productReference = 00E356EE1AD99517003FC87E /* KoboPageTurnerAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		13B07F861A680F5B00A75B9A /* KoboPageTurner */ = {
+		13B07F861A680F5B00A75B9A /* KoboPageTurnerApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "KoboPageTurner" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "KoboPageTurnerApp" */;
 			buildPhases = (
-				DB9E3B1E62131DCC919930DF /* [CP] Check Pods Manifest.lock */,
+				E703BB5024BB77AAE68D5B7A /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				9BF93A0EAACF1B9D684DA196 /* [CP] Embed Pods Frameworks */,
-				618AC8F6874DA03654CE1528 /* [CP] Copy Pods Resources */,
+				E757210B3E22C0AAE5517F5A /* [CP] Embed Pods Frameworks */,
+				388A4596CF00D1CA5B4BA919 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = KoboPageTurner;
-			productName = KoboPageTurner;
-			productReference = 13B07F961A680F5B00A75B9A /* KoboPageTurner.app */;
+			name = KoboPageTurnerApp;
+			productName = KoboPageTurnerApp;
+			productReference = 13B07F961A680F5B00A75B9A /* KoboPageTurnerApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -211,7 +212,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "KoboPageTurner" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "KoboPageTurnerApp" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -224,8 +225,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* KoboPageTurner */,
-				00E356ED1AD99517003FC87E /* KoboPageTurnerTests */,
+				13B07F861A680F5B00A75B9A /* KoboPageTurnerApp */,
+				00E356ED1AD99517003FC87E /* KoboPageTurnerAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -264,7 +265,58 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		5EB6D8F55ADEAEAE3CFE6AD0 /* [CP] Check Pods Manifest.lock */ = {
+		157E31E63F7F8B42E51B20D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		388A4596CF00D1CA5B4BA919 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp/Pods-KoboPageTurnerApp-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp/Pods-KoboPageTurnerApp-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp/Pods-KoboPageTurnerApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9B9136158F78C8780D3A1C6B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9295AFC569CCE665FF9BD5C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,65 +331,14 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KoboPageTurner-KoboPageTurnerTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-KoboPageTurnerApp-KoboPageTurnerAppTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		618AC8F6874DA03654CE1528 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner/Pods-KoboPageTurner-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner/Pods-KoboPageTurner-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner/Pods-KoboPageTurner-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		826A5C258C16832C16CE4713 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner-KoboPageTurnerTests/Pods-KoboPageTurner-KoboPageTurnerTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner-KoboPageTurnerTests/Pods-KoboPageTurner-KoboPageTurnerTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner-KoboPageTurnerTests/Pods-KoboPageTurner-KoboPageTurnerTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9BF93A0EAACF1B9D684DA196 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner/Pods-KoboPageTurner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner/Pods-KoboPageTurner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner/Pods-KoboPageTurner-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DB9E3B1E62131DCC919930DF /* [CP] Check Pods Manifest.lock */ = {
+		E703BB5024BB77AAE68D5B7A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -352,28 +353,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-KoboPageTurner-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-KoboPageTurnerApp-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		EAD459C6223BA496792E9181 /* [CP] Copy Pods Resources */ = {
+		E757210B3E22C0AAE5517F5A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner-KoboPageTurnerTests/Pods-KoboPageTurner-KoboPageTurnerTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp/Pods-KoboPageTurnerApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP] Copy Pods Resources";
+			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner-KoboPageTurnerTests/Pods-KoboPageTurner-KoboPageTurnerTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp/Pods-KoboPageTurnerApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurner-KoboPageTurnerTests/Pods-KoboPageTurner-KoboPageTurnerTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-KoboPageTurnerApp/Pods-KoboPageTurnerApp-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -402,7 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00E356F31AD99517003FC87E /* KoboPageTurnerTests.m in Sources */,
+				00E356F31AD99517003FC87E /* KoboPageTurnerAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,7 +421,7 @@
 /* Begin PBXTargetDependency section */
 		00E356F51AD99517003FC87E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 13B07F861A680F5B00A75B9A /* KoboPageTurner */;
+			target = 13B07F861A680F5B00A75B9A /* KoboPageTurnerApp */;
 			targetProxy = 00E356F41AD99517003FC87E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -428,15 +429,14 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F28FE9812F159ACF477393F6 /* Pods-KoboPageTurner-KoboPageTurnerTests.debug.xcconfig */;
+			baseConfigurationReference = 06AA3E66D50E9A7EB04DC4C3 /* Pods-KoboPageTurnerApp-KoboPageTurnerAppTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
-				DEVELOPMENT_TEAM = 26M6J2KGCA;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = KoboPageTurnerTests/Info.plist;
+				INFOPLIST_FILE = KoboPageTurnerAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -450,18 +450,17 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KoboPageTurner.app/KoboPageTurner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KoboPageTurnerApp.app/KoboPageTurnerApp";
 			};
 			name = Debug;
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DEFA359B43D1C77683D27D7D /* Pods-KoboPageTurner-KoboPageTurnerTests.release.xcconfig */;
+			baseConfigurationReference = 95D0B45BBB71669FCEC239B5 /* Pods-KoboPageTurnerApp-KoboPageTurnerAppTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
-				DEVELOPMENT_TEAM = 26M6J2KGCA;
-				INFOPLIST_FILE = KoboPageTurnerTests/Info.plist;
+				INFOPLIST_FILE = KoboPageTurnerAppTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,21 +474,19 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KoboPageTurner.app/KoboPageTurner";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KoboPageTurnerApp.app/KoboPageTurnerApp";
 			};
 			name = Release;
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89E1EDB945038C810120A8C0 /* Pods-KoboPageTurner.debug.xcconfig */;
+			baseConfigurationReference = 802ADFE53092145C9C55AE88 /* Pods-KoboPageTurnerApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 26M6J2KGCA;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = KoboPageTurner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				INFOPLIST_FILE = KoboPageTurnerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -500,7 +497,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = KoboPageTurner;
+				PRODUCT_NAME = KoboPageTurnerApp;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -509,14 +506,12 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B831B9F4A51DB8661F15D0E7 /* Pods-KoboPageTurner.release.xcconfig */;
+			baseConfigurationReference = 5D2882D4B944024070ABC64A /* Pods-KoboPageTurnerApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 26M6J2KGCA;
-				INFOPLIST_FILE = KoboPageTurner/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
+				INFOPLIST_FILE = KoboPageTurnerApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -527,7 +522,7 @@
 					"-lc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = KoboPageTurner;
+				PRODUCT_NAME = KoboPageTurnerApp;
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -582,7 +577,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -640,7 +635,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -659,7 +654,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "KoboPageTurnerTests" */ = {
+		00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "KoboPageTurnerAppTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				00E356F61AD99517003FC87E /* Debug */,
@@ -668,7 +663,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "KoboPageTurner" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "KoboPageTurnerApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -677,7 +672,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "KoboPageTurner" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "KoboPageTurnerApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
