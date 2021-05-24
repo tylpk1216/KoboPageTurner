@@ -16,7 +16,7 @@ rightX=100
 rightY=500
 ```
 
-Settings for Kobo xxx HD:
+Settings for Kobo Libra H2O:
 ```
 eventFile=/dev/input/event1
 leftX=500
@@ -40,6 +40,16 @@ rightY=500
 02. Turn on the Wi-Fi.
 03. All materials will be deleted except "/mnt/onboard/.koboserver" folder.
 
+## React-Native app
+![Architecture](Doc/reactnativeapp.png)
+
+An app based on react-native is included in the [KoboPageTurnerApp](KoboPageTurnerApp) folder. This can be compiled for Android or iOS. 
+
+Follow the instructions from the react-native docs to setup the development environment and to get it on your device, all you have to do to make it work is change the ip-addresses to the ip of your kobo running the web server in [App.js](KoboPageTurnerApp/App.js):
+
+- https://reactnative.dev/docs/environment-setup
+- https://reactnative.dev/docs/running-on-device
+
 ## Usage
 I used Kobo Clara HD to test this concept.
 System: 4.23.15505
@@ -55,7 +65,7 @@ EnableDebugServices=true
 05. Connect your bluetooth device to your cell phone.
 06. Turn on Wi-Fi on Kobo device. The Web Server will run on port 80.
 05. Make sure kobo device has the same ip-address every time it gets connected to the wifi, most of the times this can be setup in your router based on MAC-address.
-07. Use [Android app](AndroidClient) or [react-native]((KoboPageTurnerApp)) app (ios & android) to send HTTP request.
+07. Use [Android app](AndroidClient) or [react-native](KoboPageTurnerApp) app (ios & android) to send HTTP request.
 08. Modify settings.
 ```
 Codes:
