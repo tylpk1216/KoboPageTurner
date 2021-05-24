@@ -64,9 +64,9 @@ EnableDebugServices=true
 04. Check "ForceWifiOn" item.
 05. Connect your bluetooth device to your cell phone.
 06. Turn on Wi-Fi on Kobo device. The Web Server will run on port 80.
-05. Make sure kobo device has the same ip-address every time it gets connected to the wifi, most of the times this can be setup in your router based on MAC-address.
-07. Use [Android app](AndroidClient) or [react-native](KoboPageTurnerApp) app (ios & android) to send HTTP request.
-08. Modify settings.
+07. Make sure kobo device has the same ip-address every time it gets connected to the wifi, most of the times this can be setup in your router based on MAC-address.
+08. Use [Android app](AndroidClient) or [react-native](KoboPageTurnerApp) app (ios & android) to send HTTP request.
+09. Modify settings.
 ```
 Codes:
 21 ->
@@ -76,8 +76,8 @@ Codes:
 
 You could click the input area of code, and click your key, it will show your key code here.
 ```
-09. Click "LEFT PAGE" or "RIGHT PAGE" to test the communication.
-10. After closing the Web Server, uncheck "ForceWifiOn" item. Then turn off Wi-Fi.
+10. Click "LEFT PAGE" or "RIGHT PAGE" to test the communication.
+11. After closing the Web Server, uncheck "ForceWifiOn" item. Then turn off Wi-Fi.
 
 ## Caution
 01. I used PID file to prevent from running two Web Servers in the same time. Please remember to close Server before you shutdown the device. Otherwise you must delete "/mnt/onboard/.koboserver/PID" to let Server works.
