@@ -16,16 +16,16 @@ rightX=100
 rightY=500
 ```
 
-## Test Video
-[Web Server + Android App(HTTP Shortcuts)](https://youtu.be/ADpR_Omy-PE "KoboPageTurner").
+Settings for Kobo xxx HD:
+```
+eventFile=/dev/input/event1
+leftX=500
+leftY=1200
+rightX=500
+rightY=500
+```
 
-[Web Server + Android App(HTTPClient + Bluetooth keyboard)](https://youtu.be/PjRinWhRWPo "KoboPageTurner").
 
-[Web Server + Android App(HTTPClient + Bluetooth page-turner(BOOX))](https://youtu.be/-BLY8ispxj8 "KoboPageTurner").
-
-[Web Server + Android App(HTTPClient + Bluetooth page-turner(Logitech R500))](https://youtu.be/FerqFQrJcjs "KoboPageTurner").
-
-[Web Server + ESP8266(ESP-12S, DC Converter, 2 x AAA battery)](https://youtu.be/mk268fqPg5M "KoboPageTurner").
 
 ## Architecture
 ![Architecture](Doc/KoboPageTurner.png)
@@ -54,7 +54,8 @@ EnableDebugServices=true
 04. Check "ForceWifiOn" item.
 05. Connect your bluetooth device to your cell phone.
 06. Turn on Wi-Fi on Kobo device. The Web Server will run on port 80.
-07. Use Android(HTTPClient) to send HTTP request.
+05. Make sure kobo device has the same ip-address every time it gets connected to the wifi, most of the times this can be setup in your router based on MAC-address.
+07. Use [Android app](AndroidClient) or [react-native]((KoboPageTurnerApp)) app (ios & android) to send HTTP request.
 08. Modify settings.
 ```
 Codes:
@@ -118,6 +119,17 @@ Finally, I used ESP8266 (ESP-12S) to do hardware page-turner.
 This is final architecture.
 
 ![ESP8266 Architecture](Doc/ESP8266_Arch.jpg)
+
+## Test Video
+[Web Server + Android App(HTTP Shortcuts)](https://youtu.be/ADpR_Omy-PE "KoboPageTurner").
+
+[Web Server + Android App(HTTPClient + Bluetooth keyboard)](https://youtu.be/PjRinWhRWPo "KoboPageTurner").
+
+[Web Server + Android App(HTTPClient + Bluetooth page-turner(BOOX))](https://youtu.be/-BLY8ispxj8 "KoboPageTurner").
+
+[Web Server + Android App(HTTPClient + Bluetooth page-turner(Logitech R500))](https://youtu.be/FerqFQrJcjs "KoboPageTurner").
+
+[Web Server + ESP8266(ESP-12S, DC Converter, 2 x AAA battery)](https://youtu.be/mk268fqPg5M "KoboPageTurner").
 
 ## Acknowledgement
 Thanks to [KoboCloud](https://github.com/fsantini/KoboCloud). I got this idea from it.
