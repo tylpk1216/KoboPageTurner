@@ -80,8 +80,7 @@ You could click the input area of code, and click your key, it will show your ke
 11. After closing the Web Server, uncheck "ForceWifiOn" item. Then turn off Wi-Fi.
 
 ## Caution
-01. I used PID file to prevent from running two Web Servers in the same time. Please remember to close Server before you shutdown the device. Otherwise you must delete "/mnt/onboard/.koboserver/PID" to let Server works.
-02. HTTPClient always keeps screen on. If you do not use it, remember to close the App.
+01. HTTPClient always keeps screen on. If you do not use it, remember to close the App.
 
 ## Three Web APIs
 * GET /left -> left page.
@@ -143,6 +142,8 @@ This is final architecture.
 
 ## Acknowledgement
 Thanks to [KoboCloud](https://github.com/fsantini/KoboCloud). I got this idea from it.
+
+Thanks to [Niels ten Boom](https://github.com/nielstenboom). He created an app for iOS users.
 
 ## Licsnse
 MIT.
