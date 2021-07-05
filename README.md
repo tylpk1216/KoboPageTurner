@@ -30,6 +30,21 @@ By the way, I got my Kobo Elipsa on 6/29, I almost prepared to intall KoboPageTu
 [Kobo Elipsa + Logitech R500](https://youtu.be/MilzHy4Equw "KoboPageTurner").
 
 
+
+
+Although we can use bluetooth directly on Kobo Elipsa, I want to test whether KoboPageTurner works or not. I must modify some codes to support Kobo Elipsa.
+
+
+Settings for Kobo Elipsa:
+```
+eventFile=/dev/input/event2
+rawData=Elipsa
+leftX=1211
+leftY=500
+rightX=100
+rightY=500
+```
+
 ## Architecture
 ![Architecture](Doc/KoboPageTurner.png)
 
