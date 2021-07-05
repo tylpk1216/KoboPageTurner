@@ -25,6 +25,9 @@ rightX=500
 rightY=500
 ```
 
+By the way, I got my Kobo Elipsa on 6/29, I almost prepared to intall KoboPageTurner. Before installing it, I tried my Logitech R500 on Kobo Elipsa, and I could use R500 to turn page. If you have this machine, you could use R500 directly on Elipsa.
+
+[Kobo Elipsa + Logitech R500](https://youtu.be/MilzHy4Equw "KoboPageTurner").
 
 
 ## Architecture
