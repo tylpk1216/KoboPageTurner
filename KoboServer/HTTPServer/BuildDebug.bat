@@ -9,7 +9,7 @@ SET GOARM=7
 
 REM start cmd
 
-SET EXE=HTTPServerARM
+SET EXE=NewDeviceDebug
 
 go build -o %EXE% NewDevice.go
 

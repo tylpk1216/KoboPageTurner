@@ -20,6 +20,7 @@ if [ ! -e "$Logs" ]; then
     [ ! -e "$Logs/run.sh" ] && cp $KS_HOME/run.sh $Logs
     [ ! -e "$Logs/config.sh" ] && cp $KS_HOME/config* $Logs
     [ ! -e "$Logs/uninstall.sh" ] && cp $KS_HOME/uninstall.sh $Logs
+    [ ! -e "$Logs/NewDeviceDebug" ] && cp $KS_HOME/NewDeviceDebug $Logs
     [ ! -e "$UserConfig" ] && cp $KS_HOME/koboserver.cfg $Logs
 fi
 

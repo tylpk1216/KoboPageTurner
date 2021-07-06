@@ -24,6 +24,7 @@ if [ -e "$running" ]; then
 fi
 
 echo "Run" > $running
+#$KS_HOME/NewDeviceDebug
 $KS_HOME/$TestScript
 $KS_HOME/$Server &
 #echo "`$Dt` done"
