@@ -7,7 +7,8 @@ It can run on different Kobo device in theory. Just make sure two things:
 02. Do we adjust X or Y to match your panel ?
 
 You could modify the settings of "/mnt/onboard/.koboserver/koboserver.cfg" for your Kobo device.
-The origin point of Clara HD is right-top.
+
+Settings for Kobo ClaraHD. The origin point of Clara HD is right-top.
 ```
 eventFile=/dev/input/event1
 leftX=800
@@ -61,7 +62,7 @@ rightY=500
 ## React-Native app
 ![Architecture](Doc/reactnativeapp.png)
 
-An app based on react-native is included in the [KoboPageTurnerApp](KoboPageTurnerApp) folder. This can be compiled for Android or iOS. 
+An app based on react-native is included in the [KoboPageTurnerApp](KoboPageTurnerApp) folder. This can be compiled for Android or iOS.
 
 Follow the instructions from the react-native docs to setup the development environment and to get it on your device, all you have to do to make it work is change the ip-addresses to the ip of your kobo running the web server in [App.js](KoboPageTurnerApp/App.js):
 
@@ -73,7 +74,7 @@ I used Kobo Clara HD to test this concept.
 System: 4.23.15505
 
 01. Connect your Kobo device to PC.
-02. Add below setting in the "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf".
+02. Add below setting in the "/mnt/onboard/.kobo/Kobo/Kobo eReader.conf" or type "devmodeon" in search input area.
 ```
 [DeveloperSettings]
 EnableDebugServices=true
@@ -84,7 +85,8 @@ EnableDebugServices=true
 06. Turn on Wi-Fi on Kobo device. The Web Server will run on port 80.
 07. Make sure kobo device has the same ip-address every time it gets connected to the wifi, most of the times this can be setup in your router based on MAC-address.
 08. Use [Android app](AndroidClient) or [react-native](KoboPageTurnerApp) app (ios & android) to send HTTP request.
-09. Modify settings.
+09. Modify settings for HTTPClient.
+![HTTPClient Settings](Doc/HTTPClient.png)
 ```
 Codes:
 21 ->
