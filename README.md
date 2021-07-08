@@ -60,7 +60,7 @@ rightY=500
 03. All materials will be deleted except "/mnt/onboard/.koboserver" folder.
 
 ## React-Native app
-![Architecture](Doc/reactnativeapp.png)
+<img src="Doc/reactnativeapp.png" width="400">
 
 An app based on react-native is included in the [KoboPageTurnerApp](KoboPageTurnerApp) folder. This can be compiled for Android or iOS.
 
@@ -86,7 +86,9 @@ EnableDebugServices=true
 07. Make sure kobo device has the same ip-address every time it gets connected to the wifi, most of the times this can be setup in your router based on MAC-address.
 08. Use [Android app](AndroidClient) or [react-native](KoboPageTurnerApp) app (ios & android) to send HTTP request.
 09. Modify settings for HTTPClient.
-![HTTPClient Settings](Doc/HTTPClient.png)
+
+<img src="Doc/HTTPClient.png" width="400">
+
 ```
 Codes:
 21 ->
