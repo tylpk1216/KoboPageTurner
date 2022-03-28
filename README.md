@@ -46,6 +46,18 @@ rightX=100
 rightY=500
 ```
 
+
+Settings for Kobo Libra 2:
+```
+eventFile=/dev/input/event1
+rawData=Elipsa
+leftX=100
+leftY=500
+rightX=800
+rightY=500
+```
+
+
 ## Architecture
 ![Architecture](Doc/KoboPageTurner.png)
 
