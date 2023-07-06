@@ -58,6 +58,17 @@ rightY=500
 ```
 
 
+Settings for Kobo Clare 2E:
+```
+eventFile=/dev/input/event1
+rawData=Elipsa
+leftX=800
+leftY=500
+rightX=100
+rightY=500
+```
+
+
 ## Architecture
 ![Architecture](Doc/KoboPageTurner.png)
 
